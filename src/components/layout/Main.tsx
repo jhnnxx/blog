@@ -8,7 +8,7 @@ type Props = {
 export default function Main({ children }: Props) {
   const { theme } = useThemeStore()
   return (
-    <main data-theme={theme} className={`mx-auto max-w-7xl p-4`}>
+    <main data-theme={theme} className={`mx-auto max-w-7xl px-4`}>
       {children}
     </main>
   )
