@@ -24,9 +24,7 @@ export default async function PostPage(props: Params) {
 
   return (
     <main>
-      {/*<Alert preview={post.preview} />*/}
       <Container>
-        {/*<Header />*/}
         <article className="mb-32">
           <PostHeader
             title={post.title}

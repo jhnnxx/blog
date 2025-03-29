@@ -20,8 +20,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: `leeseongjun's blog`,
-  description: 'BLOG',
+  title: `유연하게`,
+  description: 'LEESEONGJUN BLOG',
 }
 
 export default function RootLayout({
