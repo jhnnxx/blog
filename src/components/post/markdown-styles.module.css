@@ -1,0 +1,26 @@
+.markdown {
+  font-size: 12px;
+}
+
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown blockquote {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /*@apply my-6;*/
+}
+
+.markdown h2 {
+  margin-top: 20px;
+  margin-bottom: 12px;
+  font-size: 26px;
+  /*@apply text-3xl mt-12 mb-4 leading-snug;*/
+}
+
+.markdown h3 {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  font-size: 18px;
+  /*@apply text-2xl mt-8 mb-4 leading-snug;*/
+}
