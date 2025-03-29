@@ -1,5 +1,6 @@
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
+import Main from '@/components/layout/Main'
 import type { Metadata } from 'next'
 import { Geist_Mono, Inter } from 'next/font/google'
 import { ReactNode } from 'react'
@@ -32,7 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} ${geistMono.variable} antialiased`}>
         <Header />
-        <main className={`mx-auto max-w-7xl p-4`}>{children}</main>
+        <Main>{children}</Main>
         <Footer />
       </body>
     </html>

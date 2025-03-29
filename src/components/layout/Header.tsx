@@ -1,12 +1,14 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Header() {
+  // const { toggleTheme } = useThemeStore()
   return (
-    <header className="sticky top-0 left-0 z-50 w-full border-b border-b-gray-200 bg-white/20 p-4 shadow backdrop-blur-md">
+    <header className="sticky top-0 left-0 z-50 w-full bg-white/20 p-4 shadow backdrop-blur-md dark:bg-black/20">
       <div className="mx-auto flex max-w-7xl items-center justify-between">
         <Link href="/">
-          <h1 className="flex gap-2 text-xl font-black text-gray-900 hover:underline">
+          <h1 className="flex gap-2">
             <Image
               src={`/assets/profile/jhnnx.jpeg`}
               className={`rounded-full`}
@@ -14,21 +16,22 @@ export default function Header() {
               height={30}
               alt={''}
             />
-            <span>jhnnx</span>
+            <span
+              className={`text-xl font-black text-gray-900 hover:underline dark:text-white`}
+            >
+              jhnnx
+            </span>
           </h1>
         </Link>
         <nav>
-          <ul className="flex space-x-4 text-base font-semibold">
+          <ul className="flex space-x-4 text-base font-semibold text-gray-700 italic dark:text-gray-200">
             <Link href="/about">
-              <li className="text-gray-700 italic hover:text-gray-900 hover:underline">
-                About
-              </li>
+              <li className="hover:underline">About</li>
             </Link>
             <Link href="/portfolio">
-              <li className="text-gray-700 italic hover:text-gray-900 hover:underline">
-                Portfolio
-              </li>
+              <li className="hover:underline">Portfolio</li>
             </Link>
+            {/*<div onClick={toggleTheme}>theme!</div>*/}
           </ul>
         </nav>
       </div>
