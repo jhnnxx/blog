@@ -10,7 +10,7 @@ export default function Home() {
 
   const morePosts = allPosts.slice(1)
   return (
-    <section className={`mx-auto p-20`}>
+    <section className={`mx-auto`}>
       <Container>
         <HeroPost
           title={heroPost.title}
