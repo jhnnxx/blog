@@ -23,25 +23,28 @@ export function HeroPost({
 }: Props) {
   return (
     <section>
-      <div className="mb-8 md:mb-16">
+      <div className="mb-4 md:mb-8">
         <CoverImage title={title} src={coverImage} slug={slug} />
       </div>
-      <div className="mb-20 md:mb-28 md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8">
+      <div className="mb-8 md:grid md:gap-x-16 lg:mb-8 lg:gap-x-8">
         <div>
-          <h3 className="mb-4 flex items-center justify-between text-xl leading-tight lg:text-3xl">
-            <Link href={`/posts/${slug}`} className="hover:underline">
+          <h4 className="mb-4 flex items-center justify-between text-xl leading-tight lg:text-2xl">
+            <Link
+              href={`/posts/${slug}`}
+              className="line-clamp-1 hover:underline"
+            >
               {title}
             </Link>
-            <Avatar name={author.name} picture={author.picture} />
-          </h3>
+            <div className="text-sm italic lg:text-lg">
+              <DateFormatter dateString={date} />
+            </div>
+          </h4>
           <div
-            className={`flex gap-3 text-sm leading-relaxed italic lg:text-lg`}
+            className={`flex items-center justify-between gap-3 leading-relaxed`}
           >
-            <p className="mb-4">#{excerpt}</p>
-            <DateFormatter dateString={date} />
-            {/*<Avatar name={author.name} picture={author.picture} />*/}
+            <span className="text-sm italic lg:text-lg">#{excerpt}</span>
+            <Avatar name={author.name} picture={author.picture} />
           </div>
-          {/*<div className="mb-4 text-sm md:mb-0 lg:text-lg"></div>*/}
         </div>
       </div>
     </section>

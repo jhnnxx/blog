@@ -24,15 +24,15 @@ export default function Header() {
           </h1>
         </Link>
         <nav>
-          <ul className="flex space-x-4 text-base font-semibold text-gray-700 italic dark:text-gray-200">
+          <div className="flex space-x-4 text-base font-semibold text-gray-700 italic dark:text-gray-200">
             <Link href="/about">
-              <li className="hover:underline">About</li>
+              <span className="hover:underline">About</span>
             </Link>
             <Link href="/portfolio">
-              <li className="hover:underline">Portfolio</li>
+              <span className="hover:underline">Portfolio</span>
             </Link>
             {/*<div onClick={toggleTheme}>theme!</div>*/}
-          </ul>
+          </div>
         </nav>
       </div>
     </header>

@@ -1,8 +1,6 @@
-import Container from '@/components/post/container'
-import { PostBody } from '@/components/post/post-body'
-import { PostHeader } from '@/components/post/post-header'
+import PostItem from '@/components/post/post-item'
 import { getPostBySlug } from '@/lib/api'
-import markdownToHtml from '@/lib/markdownToHtml'
+import serializeMarkdown from '@/lib/serializedMarkdown'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
@@ -20,23 +18,10 @@ export default async function PostPage(props: Params) {
     return notFound()
   }
 
-  const content = await markdownToHtml(post.content || '')
+  // const content = await markdownToHtml(post.content || '')
+  const content = await serializeMarkdown(post.content || '')
 
-  return (
-    <main>
-      <Container>
-        <article className="mb-32">
-          <PostHeader
-            title={post.title}
-            coverImage={post.coverImage}
-            date={post.date}
-            author={post.author}
-          />
-          <PostBody content={content} />
-        </article>
-      </Container>
-    </main>
-  )
+  return <PostItem post={post} content={content} />
 }
 
 export async function generateMetadata(props: Params): Promise<Metadata> {
@@ -47,12 +32,12 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
     return notFound()
   }
 
-  const title = `${post.title} | leeseongjun's Blog 🌱`
+  const title = `${post.title} | leeseongjun Blog 🌱`
 
   return {
-    title,
+    title: title,
     openGraph: {
-      title,
+      title: title,
       images: [post.ogImage.url],
     },
   }

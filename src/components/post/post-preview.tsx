@@ -1,24 +1,23 @@
-import { type Author } from "@/interfaces/author";
-import Link from "next/link";
-import Avatar from "./avatar";
-import CoverImage from "./cover-image";
-import DateFormatter from "./date-formatter";
+import { type Author } from '@/interfaces/author'
+import Link from 'next/link'
+import CoverImage from './cover-image'
+import DateFormatter from './date-formatter'
 
 type Props = {
-  title: string;
-  coverImage: string;
-  date: string;
-  excerpt: string;
-  author: Author;
-  slug: string;
-};
+  title: string
+  coverImage: string
+  date: string
+  excerpt: string
+  author: Author
+  slug: string
+}
 
 export function PostPreview({
   title,
   coverImage,
   date,
   excerpt,
-  author,
+  // author,
   slug,
 }: Props) {
   return (
@@ -26,16 +25,20 @@ export function PostPreview({
       <div className="mb-5">
         <CoverImage slug={slug} title={title} src={coverImage} />
       </div>
-      <h3 className="text-3xl mb-3 leading-snug">
+      <div className="mb-2 flex justify-between text-xl leading-none lg:text-2xl">
         <Link href={`/posts/${slug}`} className="hover:underline">
           {title}
         </Link>
-      </h3>
-      <div className="text-lg mb-4">
-        <DateFormatter dateString={date} />
+        <div className="text-sm italic lg:text-lg">
+          <DateFormatter dateString={date} />
+        </div>
       </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-      <Avatar name={author.name} picture={author.picture} />
+      <div className="flex flex-wrap items-center gap-2">
+        <span className="mb-4 text-sm leading-relaxed italic lg:text-lg">
+          #{excerpt}
+        </span>
+      </div>
+      {/*<Avatar name={author.name} picture={author.picture} />*/}
     </div>
-  );
+  )
 }
