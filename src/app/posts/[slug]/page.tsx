@@ -1,4 +1,4 @@
-import PostItem from '@/components/post/post-item'
+import PostItems from '@/components/post/post-items'
 import { getPostBySlug } from '@/lib/api'
 import serializeMarkdown from '@/lib/serializedMarkdown'
 import { Metadata } from 'next'
@@ -21,7 +21,7 @@ export default async function PostPage(props: Params) {
   // const content = await markdownToHtml(post.content || '')
   const content = await serializeMarkdown(post.content || '')
 
-  return <PostItem post={post} content={content} />
+  return <PostItems post={post} content={content} />
 }
 
 export async function generateMetadata(props: Params): Promise<Metadata> {

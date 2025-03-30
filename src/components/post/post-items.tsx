@@ -4,7 +4,7 @@ import { PostHeader } from '@/components/post/post-header'
 import { Post } from '@/interfaces/post'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 
-export default function PostItem({
+export default function PostItems({
   post,
   content,
 }: {
