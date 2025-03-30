@@ -32,7 +32,7 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
     return notFound()
   }
 
-  const title = `${post.title} | leeseongjun Blog 🌱`
+  const title = `${post.title} | leeseongjun blog`
 
   return {
     title: title,
