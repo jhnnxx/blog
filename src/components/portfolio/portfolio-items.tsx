@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function PortfolioItems() {
   return (
-    <section className={`container mx-auto max-w-2xl`}>
+    <section className={`b container mx-auto max-w-2xl`}>
       <div className={`grid grid-cols-1 gap-6 py-10 lg:py-24`}>
         <Link href={`https://x-pf.vercel.app`} target={'_self'}>
           <article

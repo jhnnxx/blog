@@ -1,10 +1,10 @@
+import '@/app/globals.css'
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
 import Main from '@/components/layout/Main'
 import type { Metadata } from 'next'
 import { Geist_Mono, Inter } from 'next/font/google'
 import { ReactNode } from 'react'
-import './globals.css'
 
 // const geistSans = Geist({
 //   variable: '--font-geist-sans',
@@ -31,6 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head></head>
       <body className={`${inter.className} ${geistMono.variable} antialiased`}>
         <Header />
         <Main>{children}</Main>
